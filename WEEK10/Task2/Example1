@@ -1,1 +1,48 @@
+//servo motor 2 push button
 
+#include <Servo.h>
+
+Servo myservo;    //to control servo
+
+int angle = 90;
+int angleStep = 5;    //how much we want each turn
+
+#define LEFT 12
+#define RIGHT 2
+
+void setup(){
+  Serial.begin(9600);
+  myservo.attach(9);    //servo pin 9
+  pinMode (LEFT, INPUT_PULLUP);
+  pinMode (RIGHT, INPUT_PULLUP);
+  myservo.write(angle);
+  Serial.println("Servo Button");
+}
+
+void loop() {
+
+  while(digitalRead(RIGHT) == LOW) {
+
+    if (angle > 0 && angle <= 180) {
+      angle = angle - angleStep;
+      if(angle < 0) {
+        angle = 0;
+      }else{
+        myservo.write(angle);
+        Serial.print(angle);
+      }
+    }
+    delay(100);   //delay 100ms
+  }
+  while(digitalRead(LEFT) == LOW) {
+    if (angle >= 0 && angle <= 180) {
+      angle = angle + angleStep;
+      if(angle > 180) {
+        angle = 180;
+      }else{
+        myservo.write(angle);
+        Serial.print(angle);
+      }
+    }
+  }
+}
