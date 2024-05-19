@@ -1,1 +1,2 @@
-![image](https://github.com/zakwanzamri17/Embedded-System-Design/assets/129892253/cebc61f1-d96d-436c-9243-e9beb76c436c)
+![image](https://github.com/zakwanzamri17/Embedded-System-Design/assets/129892253/6dc8b8c6-3902-4f68-a6dd-88ae5198b9ed)
+
